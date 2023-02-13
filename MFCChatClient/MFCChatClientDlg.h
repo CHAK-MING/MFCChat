@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include "CMySocket.h"
 
 
 // CMFCChatClientDlg 对话框
@@ -31,7 +32,19 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+	
 public:
 	afx_msg void OnBnClickedConnectButton(); // mark
 	afx_msg void OnBnClickedDisconnectButton();
+	CMySocket* m_client;
+	CListBox m_list;
+	CEdit m_input; // shift + alt + f
+	afx_msg void OnBnClickedSendmsgButton();
+	CString CatShowString(CString strInfo, CString strMsg); // 连接显示字符串
+	afx_msg void OnBnClickedSavenameButton();
+	afx_msg void OnBnClickedClearButton();
+	afx_msg void OnBnClickedAutosendmsgCheck();
+	CComboBox m_wordColorCombo;
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
 };

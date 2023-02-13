@@ -183,6 +183,8 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CChatSocket.h" />
+    <ClInclude Include="CServerSocket.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MFCChatServer.h" />
     <ClInclude Include="MFCChatServerDlg.h" />
@@ -191,6 +193,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CChatSocket.cpp" />
+    <ClCompile Include="CServerSocket.cpp" />
     <ClCompile Include="MFCChatServer.cpp" />
     <ClCompile Include="MFCChatServerDlg.cpp" />
     <ClCompile Include="pch.cpp">
@@ -207,7 +211,12 @@
     <None Include="res\MFCChatServer.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\MFCChatClient\background.png" />
+    <Image Include="..\MFCChatClient\x64\Debug\background.png" />
+    <Image Include="C:\Users\Administrator\Desktop\background.png" />
+    <Image Include="res\bitmap1.bmp" />
     <Image Include="res\MFCChatServer.ico" />
+    <Image Include="res\png1.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

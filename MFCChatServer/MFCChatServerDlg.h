@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "CServerSocket.h"
+#include "CChatSocket.h"
 
 // CMFCChatServerDlg 对话框
 class CMFCChatServerDlg : public CDialogEx
@@ -31,4 +33,19 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedStartButton();
+	CListBox m_list;
+	CServerSocket* m_server;
+	CChatSocket* m_chat;
+	afx_msg void OnBnClickedSendmsgButton();
+	CString CatShowString(CString strInfo, CString strMsg);
+	afx_msg void OnBnClickedClearButton();
+	afx_msg void OnBnClickedStopButton();
+	CComboBox m_wordColorCombo;
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
+	afx_msg void OnBnClickedCalculatorButton();
+	afx_msg void OnBnClickedEmailButton();
+	afx_msg void OnBnClickedQqButton();
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
 };
